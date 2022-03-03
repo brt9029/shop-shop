@@ -7,7 +7,7 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const StoreProvider = ({ value = [], ...props }) => {
-    const [state, dispach] = useProductReducer({
+    const [state, dispatch] = useProductReducer({
         products: [],
         categories: [],
         currentCategory: '',
@@ -20,3 +20,5 @@ const StoreProvider = ({ value = [], ...props }) => {
 const useStoreContext = () => {
     return useContext(StoreContext);
 };
+
+export { StoreProvider, useStoreContext };
